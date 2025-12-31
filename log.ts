@@ -45,6 +45,9 @@ mvn clean install
 
 这个命令会编译主代码，但跳过测试代码的编译和执行，这样就不会报错了
 mvn spring-boot:run -DskipTests -Dmaven.test.skip=true
+
+打开页面
+http://localhost:8081/index.html#/
  */
 
 /** 电脑java版本
@@ -52,4 +55,18 @@ mvn spring-boot:run -DskipTests -Dmaven.test.skip=true
 java 17.0.17 2025-10-21 LTS
 Java(TM) SE Runtime Environment (build 17.0.17+8-LTS-360)
 Java HotSpot(TM) 64-Bit Server VM (build 17.0.17+8-LTS-360, mixed mode, sharing)
+ */
+
+/**
+ *
+ * 打开前端vue项目
+ *
+ * cd vuehr
+ * npm install
+ * npm run serve
+ *
+ * 打开页面
+ * http://localhost:8080/#/
+ *
+ * java8 配置热更新生效
  */
