@@ -17,7 +17,7 @@ public class HelloController {
     public Map<String, String> hello() {
         Map<String, String> map = new HashMap<>();
         // 这就是你要返回的 JSON 数据结构
-        map.put("message", "Hello Antigravity");
+        map.put("message", "Hello Antigravity newyear");
         return map;
     }
 }
