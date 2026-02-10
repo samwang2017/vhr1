@@ -40,7 +40,7 @@
           style="width: 250px"
         ></el-input>
         <img
-          :src="vcUrl"
+          :src="vcUrl222"
           @click="updateVerifyCode"
           alt=""
           style="cursor: pointer"
@@ -68,7 +68,7 @@ export default {
   data() {
     return {
       loading: false,
-      vcUrl: "/verifyCode?time=" + new Date(),
+      vcUrl222: "/verifyCode",
       loginForm: {
         username: "admin",
         password: "123",
@@ -84,9 +84,12 @@ export default {
       },
     };
   },
+  mounted() {
+    console.log("组件挂载时的vcUrl:", this.vcUrl222);
+  },
   methods: {
     updateVerifyCode() {
-      this.vcUrl = "/verifyCode?time=" + new Date();
+      this.vcUrl222 = "/verifyCode?time=" + new Date();
     },
     submitLogin() {
       this.$refs.loginForm.validate((valid) => {
@@ -104,7 +107,7 @@ export default {
                 path == "/" || path == undefined ? "/home" : path
               );
             } else {
-              this.vcUrl = "/verifyCode?time=" + new Date();
+              this.vcUrl222 = "/verifyCode?time=" + new Date();
             }
           });
         } else {

@@ -73,9 +73,9 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
         <fork>true</fork> <!-- 必须配置为true，否则热更新不生效 -->
-    </configuration>
-            </plugin>
-        </plugins>
-    </build>
+        </configuration>
+                </plugin>
+            </plugins>
+        </build>
 
 </project>
