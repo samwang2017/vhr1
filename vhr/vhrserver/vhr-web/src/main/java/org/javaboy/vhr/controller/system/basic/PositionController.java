@@ -22,6 +22,7 @@ import java.util.List;
 public class PositionController {
     @Autowired
     PositionService positionService;
+
     @GetMapping("/")
     public List<Position> getAllPositions() {
         return positionService.getAllPositions();
@@ -30,7 +31,7 @@ public class PositionController {
     @PostMapping("/")
     public RespBean addPosition(@RequestBody Position position) {
         if (positionService.addPosition(position) == 1) {
-            return RespBean.ok("添加成功!");
+            return RespBean.ok("添加成功2!");
         }
         return RespBean.error("添加失败!");
     }

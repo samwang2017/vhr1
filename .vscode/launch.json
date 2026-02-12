@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-VhrApplication<vhr-web>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "org.javaboy.vhr.VhrApplication",
+      "projectName": "vhr-web",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

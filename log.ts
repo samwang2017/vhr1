@@ -70,6 +70,6 @@ Java HotSpot(TM) 64-Bit Server VM (build 17.0.17+8-LTS-360, mixed mode, sharing)
  *
  * java8 配置热更新生效
  */
-// 新增swagger http://localhost:8081/swagger-ui.htm
+// 新增swagger http://localhost:8081/swagger-ui.html
 // 有时候需要清一下包 mvn clean compile
 // 启动可以用debugger 这样可以加断点
