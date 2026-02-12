@@ -46,8 +46,11 @@ public class PositionController {
 
     @DeleteMapping("/{id}")
     public RespBean deletePositionById(@PathVariable Integer id) {
-        if (positionService.deletePositionById(id) == 1) {
+        int result = positionService.deletePositionById(id);
+        if (result == 1) {
             return RespBean.ok("删除成功!");
+        } else if (result == -1) {
+            return RespBean.error("删除失败!经理级别不能删除!");
         }
         return RespBean.error("删除失败!");
     }

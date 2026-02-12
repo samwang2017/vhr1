@@ -6,9 +6,10 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="createDate" property="createDate" jdbcType="TIMESTAMP" />
     <result column="enabled" property="enabled" jdbcType="BIT" />
+    <result column="desc4" property="desc4" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, createDate, enabled
+    id, name, createDate, enabled,desc4
   </sql>
   <select id="getAllPositions" resultMap="BaseResultMap">
     select * from position;
@@ -25,9 +26,9 @@
   </delete>
   <insert id="insert" parameterType="org.javaboy.vhr.model.Position" >
     insert into position (id, name, createDate, 
-      enabled)
+      enabled,desc4)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
-      #{enabled,jdbcType=BIT})
+      #{enabled,jdbcType=BIT},#{desc4,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="org.javaboy.vhr.model.Position" >
     insert into position
@@ -44,6 +45,9 @@
       <if test="enabled != null" >
         enabled,
       </if>
+      <if test="desc4 != null" >
+        desc4,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -57,6 +61,9 @@
       </if>
       <if test="enabled != null" >
         #{enabled,jdbcType=BIT},
+      </if>
+      <if test="desc4 != null" >
+        #{desc4,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -78,6 +85,9 @@
       <if test="enabled != null" >
         enabled = #{enabled,jdbcType=BIT},
       </if>
+      <if test="desc4 != null" >
+        desc4 = #{desc4,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -85,7 +95,8 @@
     update position
     set name = #{name,jdbcType=VARCHAR},
       createDate = #{createDate,jdbcType=TIMESTAMP},
-      enabled = #{enabled,jdbcType=BIT}
+      enabled = #{enabled,jdbcType=BIT},
+      desc4=#{desc4,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

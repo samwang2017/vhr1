@@ -22,6 +22,7 @@ import java.util.List;
 public class PositionService {
     @Autowired
     PositionMapper positionMapper;
+
     public List<Position> getAllPositions() {
         return positionMapper.getAllPositions();
     }
@@ -37,6 +38,11 @@ public class PositionService {
     }
 
     public Integer deletePositionById(Integer id) {
+        Position pos = positionMapper.selectByPrimaryKey(id);
+        System.out.println("pos" + pos + pos.getName() + pos.getName().contains("经理"));
+        if (pos != null && pos.getName().contains("经理")) {
+            return -1;
+        }
         return positionMapper.deleteByPrimaryKey(id);
     }
 

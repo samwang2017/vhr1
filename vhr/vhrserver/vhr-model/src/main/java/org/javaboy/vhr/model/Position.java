@@ -11,8 +11,10 @@ public class Position implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Position position = (Position) o;
         return Objects.equals(name, position.name);
     }
@@ -34,7 +36,7 @@ public class Position implements Serializable {
 
     private String name;
 
-    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "Asia/Shanghai")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Shanghai")
     private Date createDate;
 
     private Boolean enabled;
@@ -69,5 +71,15 @@ public class Position implements Serializable {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    private String desc4;
+
+    public String getDesc4() {
+        return desc4;
+    }
+
+    public void setDesc4(String desc4) {
+        this.desc4 = desc4;
     }
 }
