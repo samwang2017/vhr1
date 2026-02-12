@@ -1,9 +1,11 @@
 package org.javaboy.vhr.service;
 
 import org.javaboy.vhr.mapper.PositionMapper;
+import org.javaboy.vhr.model.Hr;
 import org.javaboy.vhr.model.Position;
 import org.javaboy.vhr.model.RespBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -34,6 +36,11 @@ public class PositionService {
     }
 
     public Integer updatePositions(Position position) {
+        Hr currentHr = (Hr) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        boolean isAdmin = currentHr.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_admin"));
+        if (position.getDesc4() != null && !isAdmin) {
+            throw new RuntimeException("非管理员不能修改职位描述!");
+        }
         return positionMapper.updateByPrimaryKeySelective(position);
     }
 

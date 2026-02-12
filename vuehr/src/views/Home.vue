@@ -67,7 +67,7 @@
             class="homeWelcome"
             v-if="this.$router.currentRoute.path == '/home'"
           >
-            欢迎来到微人事！
+            wel
           </div>
           <router-view class="homeRouterView" />
         </el-main>

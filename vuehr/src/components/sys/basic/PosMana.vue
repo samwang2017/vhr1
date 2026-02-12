@@ -97,6 +97,14 @@
           >
           </el-switch>
         </div>
+        <div>
+          <el-tag>职位描述</el-tag>
+          <el-input
+            class="updatePosInput"
+            size="small"
+            v-model="updatePos.desc4"
+          ></el-input>
+        </div>
       </div>
       <span slot="footer" class="dialog-footer">
         <el-button size="small" @click="dialogVisible = false">取 消</el-button>
@@ -122,6 +130,7 @@ export default {
       updatePos: {
         name: "",
         enabled: false,
+        desc4: "",
       },
       multipleSelection: [],
       positions: [],
@@ -177,7 +186,7 @@ export default {
       }
     },
     showEditView(index, data) {
-      Object.assign(this.updatePos, data);
+      this.updatePos = Object.assign({}, data);
       this.dialogVisible = true;
     },
     doUpdate() {
