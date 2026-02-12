@@ -25,4 +25,9 @@ public class GlobalExceptionHandler {
         }
         return RespBean.error("数据库异常，操作失败!");
     }
+
+    @ExceptionHandler(RuntimeException.class)
+    public RespBean runtimeException(RuntimeException e) {
+        return RespBean.error(e.getMessage());
+    }
 }

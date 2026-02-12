@@ -41,7 +41,7 @@ public class PositionService {
         Position pos = positionMapper.selectByPrimaryKey(id);
         System.out.println("pos" + pos + pos.getName() + pos.getName().contains("经理"));
         if (pos != null && pos.getName().contains("经理")) {
-            return -1;
+            throw new RuntimeException("经理级别不能删除!");
         }
         return positionMapper.deleteByPrimaryKey(id);
     }
