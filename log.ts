@@ -79,3 +79,6 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.481-b10, mixed mode)
 // 新增swagger http://localhost:8081/swagger-ui.html
 // 有时候需要清一下包 mvn clean compile
 // 启动可以用debugger 这样可以加断点
+
+// PS D:\labs\vhr> mysql -V
+// C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe  Ver 8.0.44 for Win64 on x86_64 (MySQL Community Server - GPL)
