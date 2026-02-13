@@ -55,6 +55,12 @@ http://localhost:8081/index.html#/
 java 17.0.17 2025-10-21 LTS
 Java(TM) SE Runtime Environment (build 17.0.17+8-LTS-360)
 Java HotSpot(TM) 64-Bit Server VM (build 17.0.17+8-LTS-360, mixed mode, sharing)
+
+PS D:\labs\vhr> java -version
+java version "1.8.0_481"
+Java(TM) SE Runtime Environment (build 1.8.0_481-b10)
+Java HotSpot(TM) 64-Bit Server VM (build 25.481-b10, mixed mode)
+从17降到8好支持热更新
  */
 
 /**
