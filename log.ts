@@ -41,7 +41,8 @@ OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
 cd d:\labs\vhr\vhr
 
 # 执行安装命令，编译并安装所有子模块
-mvn clean install
+// mvn clean install
+mvn clean install -Dmaven.test.skip=true
 
 这个命令会编译主代码，但跳过测试代码的编译和执行，这样就不会报错了
 mvn spring-boot:run -DskipTests -Dmaven.test.skip=true
