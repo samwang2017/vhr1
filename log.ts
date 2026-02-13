@@ -82,3 +82,4 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.481-b10, mixed mode)
 
 // PS D:\labs\vhr> mysql -V
 // C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe  Ver 8.0.44 for Win64 on x86_64 (MySQL Community Server - GPL)
+//安装mysql server 8.0.44
